@@ -1,73 +1,109 @@
-# React + TypeScript + Vite
+# Mixo Ads – Campaign Monitoring Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic, production-ready campaign monitoring dashboard built as part of the **Mixo Ads Frontend Engineer Challenge**.
 
-Currently, two official plugins are available:
+The application consumes a live backend API to display campaign performance data in a clean, usable dashboard focused on clarity and maintainability over visual polish.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 https://mixo-ads-dashboard.netlify.app
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 GitHub Repository
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🔗 https://github.com/kishan1219/mixo-ads-dashboard
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧠 Key Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Dynamic campaign data fetched from a live backend API
+- Summary metrics (total campaigns, active campaigns, spend, CTR)
+- Campaign table with:
+  - Status indicators
+  - Budget & daily spend
+  - Platform tags
+- Client-side routing for campaign detail pages
+- Responsive and production-usable UI
+- Deployed publicly with CI/CD
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🛠️ Tech Stack
+
+- **Frontend:** React + TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS
+- **Routing:** React Router
+- **HTTP Client:** Axios
+- **Deployment:** Netlify
+
+---
+
+## 📁 Project Structure
+
+```text
+src/
+├── api/            # API service layer
+├── components/     # Reusable UI components
+├── pages/          # Page-level components
+├── types/          # TypeScript types
+├── App.tsx         # App routing
+└── main.tsx        # Application entry point
+
+
+🔌 Backend API
+
+Base URL:
+
+https://mixo-fe-backend-task.vercel.app/
+
+
+Endpoints used:
+
+GET /campaigns
+
+GET /campaigns/:id
+
+⚙️ Local Development
+Prerequisites
+
+Node.js v18+ (tested with v22)
+
+Setup
+npm install
+npm run dev
+
+
+App will run at:
+
+http://localhost:5173
+
+🧪 Build & Deployment
+
+Build command:
+
+npm run build
+
+
+The project uses a strict TypeScript build (tsc -b) to ensure type safety.
+
+For Netlify routing support (React Router), a _redirects file is included:
+
+/*  /index.html  200
+
+🎯 Design Decisions
+
+Focused on functional clarity rather than heavy visual polish
+
+Used strict TypeScript settings to enforce clean code
+
+Modular structure for maintainability and scalability
+
+Minimal dependencies to keep the bundle lightweight
+
+👤 Author
+Kishan Gupta
