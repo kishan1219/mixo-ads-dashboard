@@ -1,5 +1,5 @@
 import { apiClient } from "./client";
-import type { Campaign, CampaignInsights } from "../types/campaign";
+import type { CampaignInsights } from "../types/campaign";
 
 export const getCampaigns = async () => {
   const res = await apiClient.get("/campaigns");
